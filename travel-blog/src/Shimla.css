@@ -1,0 +1,44 @@
+.shimla-blog {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+}
+
+.shimla-blog h1 {
+    color: #333;
+    text-align: center;
+}
+
+.blog-content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.blog-image {
+    width: 40%;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.blog-text {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .blog-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .blog-image {
+        width: 80%;
+        margin: 0 auto 20px;
+    }
+}

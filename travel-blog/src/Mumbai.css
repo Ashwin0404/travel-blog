@@ -24,8 +24,8 @@
     border-radius: 8px;
 }
 
-.blog-text {
-    color: #666;
+.blog-text b {
+    color: #000000;
     font-size: 16px;
     line-height: 1.6;
 }

@@ -23,7 +23,7 @@ function App() {
     pondicherry: <Pondicherry setPage={setPage}/>,
     kashmir: <Kashmir setPage={setPage}/>,
     mauritius: <Mauritius setPage={setPage}/>,
-    northeastindia: <NorthEastIndia setPage={setPage}/>,
+    assam: <NorthEastIndia setPage={setPage}/>,
   }
 
   return (

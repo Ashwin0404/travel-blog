@@ -8,6 +8,7 @@ export default function Mauritius({ setPage }) {
       <div className="blog-content">
         <img src="portlouis.jpeg" alt="Port Louis" className="blog-image" />
         <p className="blog-text">
+        <h3 ><u>Port Louis</u></h3>
           My Mauritian adventure began in the vibrant capital, <b>Port Louis</b>. I wandered
           through the bustling markets filled with colorful textiles, spices, and
           local crafts. <b>The French colonial architecture and historical landmarks,
@@ -17,6 +18,7 @@ export default function Mauritius({ setPage }) {
       <div className="blog-content">
         <img src="mauritiusbeach.jpeg" alt="Mauritius Beaches" className="blog-image" />
         <p className="blog-text">
+        <h3 ><u>Beach Getaway</u></h3>
           Mauritius is renowned for its pristine beaches and crystal-clear turquoise
           waters. I spent a blissful day relaxing on the <b>white sand beaches of
           Ile aux Cerfs, indulging in water sports like snorkeling and kayaking,
@@ -26,6 +28,7 @@ export default function Mauritius({ setPage }) {
       <div className="blog-content">
         <img src="botanicalgarden.jpeg" alt="Botanical Garden" className="blog-image" />
         <p className="blog-text">
+        <h3 ><u>Botanical Garden</u></h3>
           For a taste of the island's diverse flora and fauna, I explored the
           <b>Sir Seewoosagur Ramgoolam Botanical Garden</b>. The sprawling gardens showcase
           a variety of endemic plants, giant water lilies, and a vibrant birdlife,
@@ -35,6 +38,7 @@ export default function Mauritius({ setPage }) {
       <div className="blog-content">
         <img src="mauritiancuisine.jpeg" alt="Mauritius Cuisine" className="blog-image" />
         <p className="blog-text">
+        <h3 ><u>Mauritian Cuisine</u></h3>
           Mauritius offers a unique blend of flavors, <b>influenced by African,
           Indian, Chinese, and European cuisines</b>. I savored a delicious Mauritian
           curry, combining fresh seafood with fragrant spices and creamy coconut
@@ -45,6 +49,7 @@ export default function Mauritius({ setPage }) {
       <div className="blog-content">
         <img src="hiking.jpeg" alt="Hiking Trail" className="blog-image" />
         <p className="blog-text">
+        <h3 ><u>One For the Adventurer</u></h3>
           Mauritius offers adventure beyond the beaches. I embarked on a scenic
           hiking trail through <b>the Black River Gorges National Park</b>, surrounded by
           lush rainforests, cascading waterfalls, and breathtaking viewpoints. The

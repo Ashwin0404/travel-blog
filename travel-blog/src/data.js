@@ -72,7 +72,7 @@ export const data = [
     {
         id: 8,
         date: "March 2017",
-        state: "northeastindia",
+        state: "assam",
         title: "North East India",
         description: "North East India, nicknamed the 'Seven Sisters', boasts breathtaking diversity. Trek through Arunachal Pradesh's Himalayas, cruise Assam's mighty Brahmaputra River, or marvel at Meghalaya's living root bridges. Immerse yourself in rich tribal cultures, from Manipur's vibrant dance forms to Nagaland's Hornbill Festival. Explore serene temples in Tripura or delve into the mysterious caves of Meghalaya. This region promises adventure, cultural immersion, and unforgettable natural beauty.",
         coverImg: "northeastindia.jpeg",

@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Kashmir.css"; 
 
 export default function Kashmir({ setPage }) {
+  const [comments, setComments] = useState([
+    { date: "2023-04-01", name: "John Doe", rating: 5, text: "The view of the Dal Lake was absolutely breathtaking, a must-see!" },
+    { date: "2023-04-10", name: "Jane Smith", rating: 4, text: "Loved the Shikara ride and the warm hospitality of the local people!" }
+]);
+const [commentText, setCommentText] = useState("");
+const [commentDate, setCommentDate] = useState("");
+const [commentName, setCommentName] = useState("");
+const [commentRating, setCommentRating] = useState(5);
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!commentText || !commentDate || !commentName) return;
+    const newComment = {
+        date: commentDate,
+        name: commentName,
+        rating: parseInt(commentRating, 10),
+        text: commentText
+    };
+    setComments([...comments, newComment]);
+    setCommentText("");
+    setCommentDate("");
+    setCommentName("");
+    setCommentRating(5);
+};
   return (
     <div className="Kashmir-blog">
       <h1 onClick={() => setPage("home")}><u>A Week in Kashmir: Heavenly Abode</u></h1>
@@ -47,6 +71,38 @@ export default function Kashmir({ setPage }) {
           and cardamom, for a truly authentic culinary experience.</b>
         </p>
       </div>
+      <div className="comment-section">
+                <h2><u>Share Your Experience</u></h2>
+                <form onSubmit={handleSubmit}>
+                    <input type="date" value={commentDate} onChange={e => setCommentDate(e.target.value)} required />
+                    <input type="text" placeholder="Your name" value={commentName} onChange={e => setCommentName(e.target.value)} required />
+                    <select value={commentRating} onChange={e => setCommentRating(e.target.value)}>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <textarea placeholder="Your comment" value={commentText} onChange={e => setCommentText(e.target.value)} required></textarea>
+                    <button type="submit">Submit Comment</button>
+                </form>
+                <ul>
+                    {comments.map((comment, index) => (
+                        <li key={index}>
+                            <strong>{comment.name}</strong> ({comment.date}) - <i>{comment.rating} Stars</i><br />
+                            {comment.text}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+    
+    
+    
+    
+    
+    
+    
     </div>
   );
 }

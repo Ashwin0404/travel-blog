@@ -7,11 +7,7 @@ export default function Header() {
 			<header className="journal-header" style={{ background: 'url(path/to/background.jpg) center/cover no-repeat' }}>
 				
 				<div ><h1 className="title">Mystic India Travelogues</h1> 
-				{/* <nav id ="nav">
-					<a href="#home" style={{ marginRight: '20px' }}>Home</a>
-					<a href="#about" style={{ marginRight: '20px' }}>About</a>
-					<a href="#contact">Contact  TukTukTrails </a>
-				</nav> */}
+				
 				</div>
 			</header>
 			<div >

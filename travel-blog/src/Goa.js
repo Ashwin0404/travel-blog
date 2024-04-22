@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Goa.css"; 
 
 export default function Goa({setPage}) {
+    const [comments, setComments] = useState([
+        { date: "01-04-2022", name: "John Doe", rating: 5, text: "The beaches in Goa are simply stunning. Loved the sunset at Anjuna Beach!" },
+        { date: "28-10-2019", name: "Jane Smith", rating: 4, text: "Had a great time exploring the historic forts. The views from Fort Aguada are breathtaking!" }
+    ]);
+    const [commentText, setCommentText] = useState("");
+    const [commentDate, setCommentDate] = useState("");
+    const [commentName, setCommentName] = useState("");
+    const [commentRating, setCommentRating] = useState(5);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!commentText || !commentDate || !commentName) return;
+        const newComment = {
+            date: commentDate,
+            name: commentName,
+            rating: parseInt(commentRating, 10),
+            text: commentText
+        };
+        setComments([...comments, newComment]);
+        setCommentText("");
+        setCommentDate("");
+        setCommentName("");
+        setCommentRating(5);
+    };
     return (
         <div className="goa-blog">
             <h1 onClick={() => setPage("home")}><u>A Week in Goa: Sun, Sand, and Serenity</u></h1>
@@ -52,7 +76,40 @@ export default function Goa({setPage}) {
                     Exploring Old Goa was like stepping back in time. <b>The area's rich collection of churches, convents, and ruins reflect its history as a Portuguese capital.</b>
                 </p>
             </div>
+            <div className="comment-section">
+                <h2><u>Share Your Experience</u></h2>
+                <form onSubmit={handleSubmit}>
+                    <input type="date" value={commentDate} onChange={e => setCommentDate(e.target.value)} required />
+                    <input type="text" placeholder="Your name" value={commentName} onChange={e => setCommentName(e.target.value)} required />
+                    <select value={commentRating} onChange={e => setCommentRating(e.target.value)}>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <textarea placeholder="Your comment" value={commentText} onChange={e => setCommentText(e.target.value)} required></textarea>
+                    <button type="submit">Submit Comment</button>
+                </form>
+                <ul>
+                    {comments.map((comment, index) => (
+                        <li key={index}>
+                            <strong>{comment.name}</strong> ({comment.date}) - <i>{comment.rating} Stars</i><br />
+                            {comment.text}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
             
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
     );
 }

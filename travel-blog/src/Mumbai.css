@@ -10,6 +10,10 @@
     color: #333;
     text-align: center;
 }
+.mumbai-blog h1:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 
 .blog-content {
     display: flex;
@@ -24,7 +28,7 @@
     border-radius: 8px;
 }
 
-.blog-text b {
+.blog-text {
     color: #000000;
     font-size: 16px;
     line-height: 1.6;
@@ -41,3 +45,79 @@
         margin: 0 auto 20px;
     }
 }
+.comment-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #dbdbdb;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.comment-section h2 {
+    color: #000000;
+    text-align: center;
+}
+
+.comment-section form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-section input[type="date"],
+.comment-section input[type="text"],
+.comment-section select,
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.comment-section textarea {
+    height: 100px;
+}
+
+.comment-section button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-section button:hover {
+    background-color: #45a049;
+}
+
+.comment-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comment-section li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-left: 5px solid #4CAF50;
+    box-shadow: 0 2px 5px rgba(147, 147, 147, 0.12);
+}
+
+.comment-section li strong {
+    font-size: 16px;
+    color: #404040;
+}
+
+.comment-section li i {
+    font-style: times new roman;
+    color: #5b5b5b;
+}
+

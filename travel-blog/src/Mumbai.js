@@ -1,18 +1,41 @@
-import React from "react";
-import "./Mumbai.css"; 
+import React, { useState } from "react";
+import "./Mumbai.css";
 
-export default function Mumbai({setPage}) {
+export default function Mumbai({ setPage }) {
+    const [comments, setComments] = useState([
+        { date: "2023-04-01", name: "John Doe", rating: 5, text: "Loved the night view at Marine Drive!" },
+        { date: "2023-04-10", name: "Jane Smith", rating: 4, text: "The street food was incredible, especially the Vada Pav!" }
+    ]);
+    const [commentText, setCommentText] = useState("");
+    const [commentDate, setCommentDate] = useState("");
+    const [commentName, setCommentName] = useState("");
+    const [commentRating, setCommentRating] = useState(5);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!commentText || !commentDate || !commentName) return;
+        const newComment = {
+            date: commentDate,
+            name: commentName,
+            rating: parseInt(commentRating, 10),
+            text: commentText
+        };
+        setComments([...comments, newComment]);
+        setCommentText("");
+        setCommentDate("");
+        setCommentName("");
+        setCommentRating(5);
+    };
     return (
         <div className="mumbai-blog">
             <h1 onClick={() => setPage("home")}><u>A Week in Mumbai: City of Dreams</u></h1>
             <div className="blog-content">
                 <img src="goi.jpg" alt="Gateway of India" className="blog-image" />
-                
-                <p className="blog-text">
-                <h3 ><u>The Gateway of India</u></h3>
-                    My first day in Bombay began with a visit to <b>the Gateway of India</b>, one of the most famous historical landmarks in the city.
-                    Overlooking the Arabian Sea, it was built during the 20th century in honor of King George V and Queen Mary's visit to India.
-                </p>
+                <div className="blog-text">
+                    <h3><u>The Gateway of India</u></h3>
+                    <p>My first day in Bombay began with a visit to <b>the Gateway of India</b>, one of the most famous historical landmarks in the city.
+                    Overlooking the Arabian Sea, it was built during the 20th century in honor of King George V and Queen Mary's visit to India.</p>
+                </div>
             </div>
             <div className="blog-content">
                 <img src="mumbai_cuisine.jpg" alt="Local Cuisine" className="blog-image" />
@@ -43,7 +66,30 @@ export default function Mumbai({setPage}) {
                     Another highlight was a visit to <b>the Elephanta Caves</b>, located on an island about 11 km northeast of the Harbor. The rock-cut caves are primarily dedicated to the Hindu god Shiva and showcase India’s rich cultural heritage.
                 </p>
             </div>
-            
+            <div className="comment-section">
+                <h2><u>Share Your Experience</u></h2>
+                <form onSubmit={handleSubmit}>
+                    <input type="date" value={commentDate} onChange={e => setCommentDate(e.target.value)} required />
+                    <input type="text" placeholder="Your name" value={commentName} onChange={e => setCommentName(e.target.value)} required />
+                    <select value={commentRating} onChange={e => setCommentRating(e.target.value)}>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <textarea placeholder="Your comment" value={commentText} onChange={e => setCommentText(e.target.value)} required></textarea>
+                    <button type="submit">Submit Comment</button>
+                </form>
+                <ul>
+                    {comments.map((comment, index) => (
+                        <li key={index}>
+                            <strong>{comment.name}</strong> ({comment.date}) - <i>{comment.rating} Stars</i><br />
+                            {comment.text}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

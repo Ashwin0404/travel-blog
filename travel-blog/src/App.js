@@ -21,7 +21,7 @@ function App() {
     goa: <Goa setPage={setPage}/>,
     shimla: <Shimla setPage={setPage}/>,
     pondicherry: <Pondicherry setPage={setPage}/>,
-    kashmir: <Kashmir setPage={setPage}/>,
+    srinagar: <Kashmir setPage={setPage}/>,
     mauritius: <Mauritius setPage={setPage}/>,
     assam: <NorthEastIndia setPage={setPage}/>,
   }

@@ -10,6 +10,10 @@
     color: #333;
     text-align: center;
   }
+  .Mauritius-blog h1:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
   
   .blog-content {
     display: flex;

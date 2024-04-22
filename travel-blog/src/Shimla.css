@@ -11,6 +11,10 @@
     color: #333;
     text-align: center;
 }
+.shimla-blog h1:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 
 .blog-content {
     display: flex;

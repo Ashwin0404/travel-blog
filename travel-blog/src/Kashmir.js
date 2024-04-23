@@ -3,8 +3,13 @@ import "./Kashmir.css";
 
 export default function Kashmir({ setPage }) {
   const [comments, setComments] = useState([
-    { date: "2023-04-01", name: "John Doe", rating: 5, text: "The view of the Dal Lake was absolutely breathtaking, a must-see!" },
-    { date: "2023-04-10", name: "Jane Smith", rating: 4, text: "Loved the Shikara ride and the warm hospitality of the local people!" }
+{ date: "2023-04-01", name: "Rohan Singh", rating: 5, text: "The view of the Dal Lake was absolutely breathtaking, a must-see!" },
+{ date: "2023-04-10", name: "Ananya Iyer", rating: 4, text: "Loved the Shikara ride and the warm hospitality of the local people!" },
+{ date: "2023-04-15", name: "Siddharth Banerjee", rating: 5, text: "The gardens of Srinagar, especially the Mughal Gardens, are like paradise on earth." },
+{ date: "2023-04-22", name: "Aisha Thakur", rating: 4, text: "Gulmarg's scenic beauty and skiing experience are unparalleled. Highly recommend!" },
+{ date: "2023-05-01", name: "Kabir Joshi", rating: 5, text: "The serene walks through Pahalgam left me speechless. The riverside view is stunning." },
+{ date: "2023-05-10", name: "Priya Malik", rating: 4, text: "Visiting the historic temples and experiencing the peaceful ambiance was truly spiritual." }
+
 ]);
 const [commentText, setCommentText] = useState("");
 const [commentDate, setCommentDate] = useState("");

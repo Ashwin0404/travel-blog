@@ -1,6 +1,35 @@
-import React from "react";
+import React,{useState} from "react";
 import "./NorthEastIndia.css"; 
 export default function NorthEastIndia({ setPage }) {
+  const [comments, setComments] = useState([
+    { date: "2023-09-05", name: "Kavya Iyer", rating: 5, text: "The serene landscapes of Tawang Monastery are absolutely breathtaking!" },
+{ date: "2023-09-10", name: "Siddharth Singh", rating: 4, text: "Kaziranga National Park offers an amazing wildlife experience." },
+{ date: "2023-09-15", name: "Anushka Patel", rating: 5, text: "The living root bridges in Meghalaya are a marvel of natural engineering!" },
+{ date: "2023-09-22", name: "Rohan Bhatia", rating: 4, text: "The vibrant culture and festivals of Manipur are a feast for the senses." },
+{ date: "2023-09-28", name: "Priya Das", rating: 5, text: "The boat ride on the majestic Brahmaputra River was unforgettable." },
+{ date: "2023-10-03", name: "Aman Verma", rating: 4, text: "Exploring the ancient temples of Tripura was a profound spiritual journey." }
+
+]);
+const [commentText, setCommentText] = useState("");
+const [commentDate, setCommentDate] = useState("");
+const [commentName, setCommentName] = useState("");
+const [commentRating, setCommentRating] = useState(5);
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!commentText || !commentDate || !commentName) return;
+    const newComment = {
+        date: commentDate,
+        name: commentName,
+        rating: parseInt(commentRating, 10),
+        text: commentText
+    };
+    setComments([...comments, newComment]);
+    setCommentText("");
+    setCommentDate("");
+    setCommentName("");
+    setCommentRating(5);
+};
   return (
     <div className="north-east-india-blog">
       <h1 onClick={() => setPage("home")}><u>North East India: A Seven Sister Wonder </u></h1>
@@ -72,6 +101,30 @@ export default function NorthEastIndia({ setPage }) {
           meadow carpeted with vibrant flowers.
         </p>
       </div>
+      <div className="comment-section">
+                <h2><u>Share Your Experience</u></h2>
+                <form onSubmit={handleSubmit}>
+                    <input type="date" value={commentDate} onChange={e => setCommentDate(e.target.value)} required />
+                    <input type="text" placeholder="Your name" value={commentName} onChange={e => setCommentName(e.target.value)} required />
+                    <select value={commentRating} onChange={e => setCommentRating(e.target.value)}>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                    <textarea placeholder="Your comment" value={commentText} onChange={e => setCommentText(e.target.value)} required></textarea>
+                    <button type="submit">Submit Comment</button>
+                </form>
+                <ul>
+                    {comments.map((comment, index) => (
+                        <li key={index}>
+                            <strong>{comment.name}</strong> ({comment.date}) - <i>{comment.rating} Stars</i><br />
+                            {comment.text}
+                        </li>
+                    ))}
+                </ul>
+            </div>
     </div>
-      )
+  )
 }

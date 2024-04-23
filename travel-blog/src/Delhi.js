@@ -3,8 +3,12 @@ import "./Delhi.css";
 
 export default function Delhi({ setPage }) {
     const [comments, setComments] = useState([
-        { date: "2024-04-18", name: "John Doe", rating: 5, text: "Loved the Red Fort, a must-visit!" },
-        { date: "2024-04-17", name: "Jane Smith", rating: 4, text: "The food in Chandni Chowk was incredible." }
+        { date: "2024-04-18", name: "Vanshika Gupta", rating: 5, text: "Loved the Red Fort, a must-visit!" },
+        { date: "2024-04-17", name: "Ashwin Anand", rating: 4, text: "The food in Chandni Chowk was incredible." },
+        { date: "2024-04-16", name: "Rajesh Kumar", rating: 5, text: "The gardens of Lodi are peaceful and picturesque, perfect for a leisurely stroll." },
+        { date: "2024-04-15", name: "Emily Johnson", rating: 5, text: "Experiencing the Qutub Minar at sunset was truly magical. The historical aura is palpable." },
+        { date: "2024-04-14", name: "Anita Desai", rating: 4, text: "The art scene in Hauz Khas Village is vibrant and full of life. A cultural hotspot not to be missed!" },
+        { date: "2024-04-13", name: "Mark Thompson", rating: 5, text: "Taking a boat ride on the Yamuna at dawn offers a serene and almost transcendent experience. Delhi's charm is underrated." }
     ]);
     const [commentText, setCommentText] = useState("");
     const [commentDate, setCommentDate] = useState("");

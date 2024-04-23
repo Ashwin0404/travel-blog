@@ -3,8 +3,13 @@ import "./Mumbai.css";
 
 export default function Mumbai({ setPage }) {
     const [comments, setComments] = useState([
-        { date: "2023-04-01", name: "John Doe", rating: 5, text: "Loved the night view at Marine Drive!" },
-        { date: "2023-04-10", name: "Jane Smith", rating: 4, text: "The street food was incredible, especially the Vada Pav!" }
+        { date: "2023-04-01", name: "Arjun Singh", rating: 5, text: "Loved the night view at Marine Drive!" },
+        { date: "2023-04-10", name: "Dhruv Doshi", rating: 4, text: "The street food was incredible, especially the Vada Pav!" },
+        { date: "2023-05-02", name: "Meena Gupta", rating: 5, text: "The historical tour of the Chhatrapati Shivaji Terminus was enlightening. Such intricate architecture!" },
+        { date: "2023-03-15", name: "Oliver McLovin", rating: 4, text: "The hustle and bustle of the Crawford Market is something you can't miss. Great place for souvenirs!" },
+        { date: "2023-02-25", name: "Pooja Krishnan", rating: 5, text: "Watching the sunset from Juhu Beach was truly magical. Highly recommend!" },
+        { date: "2023-01-30", name: "Emily Johnson", rating: 4, text: "The ferry ride to Elephanta Island was a great escape from the city's buzz. Loved the cave sculptures!" }
+        
     ]);
     const [commentText, setCommentText] = useState("");
     const [commentDate, setCommentDate] = useState("");

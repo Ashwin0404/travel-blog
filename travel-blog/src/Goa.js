@@ -3,8 +3,12 @@ import "./Goa.css";
 
 export default function Goa({setPage}) {
     const [comments, setComments] = useState([
-        { date: "01-04-2022", name: "John Doe", rating: 5, text: "The beaches in Goa are simply stunning. Loved the sunset at Anjuna Beach!" },
-        { date: "28-10-2019", name: "Jane Smith", rating: 4, text: "Had a great time exploring the historic forts. The views from Fort Aguada are breathtaking!" }
+        { date: "01-04-2022", name: "Naman Badiani", rating: 5, text: "The beaches in Goa are simply stunning. Loved the sunset at Anjuna Beach!" },
+        { date: "28-10-2019", name: "Niharika Singh", rating: 4, text: "Had a great time exploring the historic forts. The views from Fort Aguada are breathtaking!" },
+        { date: "15-03-2022", name: "Rahul Mehta", rating: 5, text: "The nightlife in Baga is electric! A must-experience for anyone visiting Goa." },
+        { date: "22-02-2022", name: "Harry Lewis", rating: 4, text: "The spice plantations are a hidden gem. Learned a lot and tasted some incredibly fresh spices!" },
+        { date: "05-01-2022", name: "Amita Patel", rating: 5, text: "Goa's Portuguese architecture is enchanting. Walking through Fontainhas felt like stepping back in time." },
+        { date: "17-11-2021", name: "Chris Wong", rating: 5, text: "Dolphin watching was a highlight of our trip. The kids loved it and the crew was fantastic!" }
     ]);
     const [commentText, setCommentText] = useState("");
     const [commentDate, setCommentDate] = useState("");
